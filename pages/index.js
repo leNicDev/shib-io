@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 export default function Home({ coin }) {
   function pumpTrend() {
     return (
       <div>
         <span>MOON</span>
-        <img className={styles.trendGif} src="/happy.webp"></img>
+        <img className={styles.trendGif} src="/happy.webp" />
       </div>
     );
   }
@@ -14,7 +14,7 @@ export default function Home({ coin }) {
     return (
       <div>
         <span>Dump</span>
-        <img className={styles.trendGif} src="/sad.webp"></img>
+        <img className={styles.trendGif} src="/sad.webp" />
       </div>
     );
   }
@@ -22,7 +22,7 @@ export default function Home({ coin }) {
     return (
       <div>
         <span>meh</span>
-        <img className={styles.trendGif} src="/meh.webp"></img>
+        <img className={styles.trendGif} src="/meh.webp" />
       </div>
     );
   }
@@ -45,11 +45,11 @@ export default function Home({ coin }) {
 
       <header className={styles.header}>
         <div className={styles.background}>
-          <img src="/bg.jpg"></img>
+          <img src="/bg.jpg" />
         </div>
 
         <div className={styles.titleBar}>
-          <img src="/logo.png"></img>
+          <img src="/logo.png" />
           <span>All hail SHIBA</span>
         </div>
 
