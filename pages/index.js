@@ -112,15 +112,20 @@ export default function Home({ coin }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(`${process.env.API_URL || 'http://localhost:3000'}/api/coin`);
+  /*const response = await fetch(`${process.env.API_URL || 'http://localhost:3000'}/api/coin`);
   const data = await response.json();
   const coin = {
     totalSupply: data.data.market_data.total_supply,
     priceChange24h: data.data.market_data.price_change_percentage_24h,
     currentPrice: data.data.market_data.current_price.usd,
     ath: data.data.market_data.ath.usd,
+  };*/
+  const coin = {
+    totalSupply: 1,
+    priceChange24h: 24,
+    currentPrice: 0.00021,
+    ath: 0.00021,
   };
-  console.log(coin);
   return {
     props: {
       coin
