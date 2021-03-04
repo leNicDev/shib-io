@@ -43,7 +43,7 @@ export default function Home({ coin }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.header}>
+      <main className={styles.header}>
         <div className={styles.background}>
           <img src="/bg.jpg" />
         </div>
@@ -77,15 +77,32 @@ export default function Home({ coin }) {
         </div>
 
         <div className={styles.howToBuy}>
-          <div className={styles.howToBuyCard}>
-            <div className={styles.title}>Uniswap</div>
-            podf
-          </div>
-          <div className={styles.howToBuyCard}>
-            <div className={styles.title}>Hotbit</div>
+          <h1 className={styles.title}>How to buy $SHIB</h1>
+
+          <div className={styles.cards}>
+            <div className={`${styles.howToBuyCard} ${styles.recommended}`}>
+              <div className={styles.title}>Uniswap</div>
+              <div className={styles.recommendedLabel}>recommended</div>
+              <ol className={styles.steps}>
+                <li>
+                  Install <a href="https://metamask.io/download.html" rel="noopener noreferrer"  target="_blank">MetaMask</a>
+                </li>
+                <li>
+                  Open <a href="https://app.uniswap.org/#/swap?outputCurrency=0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce" rel="noopener noreferrer"  target="_blank">Uniswap</a>
+                </li>
+                <li>
+                  Swap some ETH to SHIB
+                </li>
+              </ol>
+              <span>Done! You can find your SHIB in your MetaMask wallet.</span>
+            </div>
+            <div className={styles.howToBuyCard}>
+              <div className={styles.title}>Hotbit</div>
+              <span className={styles.comingSoon}>Coming soon...</span>
+            </div>
           </div>
         </div>
-      </header>
+      </main>
 
       <main>
 
@@ -95,9 +112,8 @@ export default function Home({ coin }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch('http://localhost:3000/api/coin');
+  const response = await fetch(`${process.env.API_URL || 'http://localhost:3000'}/api/coin`);
   const data = await response.json();
-  console.log('data', data);
   const coin = {
     totalSupply: data.data.market_data.total_supply,
     priceChange24h: data.data.market_data.price_change_percentage_24h,
