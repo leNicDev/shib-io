@@ -128,6 +128,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 .howToBuyCard {
   position: relative;
@@ -169,10 +170,6 @@
     );
     filter: blur(6px);
     border-radius: 15px;
-  }
-
-  &:not(:last-child) {
-    margin-right: 20px;
   }
 
   .title {
