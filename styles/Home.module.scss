@@ -8,9 +8,10 @@
   overflow: hidden;
   color: white;
   background-color: #040018;
-}
-.header * {
-  z-index: 1;
+
+  * {
+    z-index: 1;
+  }
 }
 
 .background {
@@ -22,10 +23,11 @@
   z-index: 0;
   filter: blur(30px);
   pointer-events: none;
-}
-.background img {
-  width: 100%;
-  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .titleBar {
@@ -35,10 +37,11 @@
   height: 150px;
   padding: 30px;
   font-size: 1.4em;
-}
-.titleBar img {
-  height: 100%;
-  margin-right: 20px;
+
+  img {
+    height: 100%;
+    margin-right: 20px;
+  }
 }
 
 .coinData {
@@ -48,16 +51,20 @@
   justify-items: center;
   align-items: center;
   padding-top: 50px;
+
+  .data {
+    text-align: center;
+
+    .dataTitle {
+      display: block;
+    }
+
+    .dataValue {
+      font-size: 2em;
+    }
+  }
 }
-.coinData .data {
-  text-align: center;
-}
-.coinData .data .dataValue {
-  font-size: 2em;
-}
-.coinData .data .dataTitle {
-  display: block;
-}
+
 .trendGif {
   display: block;
   width: 150px;
@@ -78,38 +85,41 @@
   background-color: #171230;
   color: white;
   padding: 20px;
-}
-.howToBuyCard::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  z-index: -1;
-  background-image: linear-gradient(
-    45deg,
-    rgb(204, 0, 0) 0%,
-    rgb(204, 123, 0) 10%,
-    rgb(169, 178, 26) 20%,
-    rgb(63, 151, 29) 30%,
-    rgb(30, 158, 157) 40%,
-    rgb(24, 149, 170) 50%,
-    rgb(14, 94, 184) 60%,
-    rgb(70, 10, 189) 70%,
-    rgb(146, 6, 195) 80%,
-    rgb(199, 3, 172) 90%,
-    rgb(204, 0, 0) 100%
-  );
-  animation: party 2s linear 0s infinite normal none running;
-  filter: blur(6px);
-  border-radius: 15px;
-}
-.howToBuyCard .title {
-  font-size: 1.2em;
-}
-.howToBuyCard:not(:last-child) {
-  margin-right: 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    background-image: linear-gradient(
+      45deg,
+      rgb(204, 0, 0) 0%,
+      rgb(204, 123, 0) 10%,
+      rgb(169, 178, 26) 20%,
+      rgb(63, 151, 29) 30%,
+      rgb(30, 158, 157) 40%,
+      rgb(24, 149, 170) 50%,
+      rgb(14, 94, 184) 60%,
+      rgb(70, 10, 189) 70%,
+      rgb(146, 6, 195) 80%,
+      rgb(199, 3, 172) 90%,
+      rgb(204, 0, 0) 100%
+    );
+    animation: party 2s linear 0s infinite normal none running;
+    filter: blur(6px);
+    border-radius: 15px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
 }
 
 @keyframes party {
