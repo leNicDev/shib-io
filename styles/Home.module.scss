@@ -1,3 +1,5 @@
+@import "mixins";
+
 .container {
   min-height: 100vh;
 }
@@ -5,9 +7,22 @@
 .header {
   height: 100vh;
   position: relative;
-  overflow: hidden;
   color: white;
   background-color: #040018;
+
+  @include xs() {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  @include sm() {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  @include md() {
+    overflow: hidden;
+  }
 
   * {
     z-index: 1;
@@ -38,19 +53,49 @@
   padding: 30px;
   font-size: 1.4em;
 
+  @include xs() {
+    flex-direction: column;
+  }
+
+  @include sm() {
+    flex-direction: column;
+  }
+
+  @include md() {
+    flex-direction: row;
+  }
+
   img {
     height: 100%;
-    margin-right: 20px;
+
+    @include xs() {
+      margin-right: 0;
+    }
+
+    @include sm() {
+      margin-right: 0;
+    }
+
+    @include md() {
+      margin-right: 20px;
+    }
   }
 }
 
 .coinData {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-gap: 50px;
   justify-items: center;
   align-items: center;
   padding-top: 50px;
+
+  @include md() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include xl() {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   .data {
     text-align: center;
@@ -85,6 +130,14 @@
   background-color: #171230;
   color: white;
   padding: 20px;
+
+  @include xs() {
+    margin-top: 50px;
+  }
+
+  @include sm() {
+    margin-top: 50px;
+  }
 
   &::after {
     content: "";
